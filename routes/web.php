@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DatatableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Datatable route
+Route::get('datatable',[DatatableController::class,'index']);
+Route::get('user/listing',[DatatableController::class,'getUser'])->name('user.list');
