@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatatableController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,11 @@ Route::get('/', function () {
 //Datatable route
 Route::get('datatable',[DatatableController::class,'index']);
 Route::get('user/listing',[DatatableController::class,'getUser'])->name('user.list');
+
+//export pdf and excel route
+Route::get('/export',function(){
+    return view('exportpdfexcel');
+});
+Route::get('/export/view',[StudentController::class,'viewStudentData']);
+Route::get('/export/pdf',[StudentController::class,'exportStudentPdf']);
+Route::get('/export/csv',[StudentController::class,'exportStudentCsv']);
