@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatatableController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,6 @@ Route::get('/export',function(){
 Route::get('/export/view',[StudentController::class,'viewStudentData']);
 Route::get('/export/pdf',[StudentController::class,'exportStudentPdf']);
 Route::get('/export/csv',[StudentController::class,'exportStudentCsv']);
+
+//usercontroller route
+Route::get('/user',[UserController::class,'sendEmailUser']);
