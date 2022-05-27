@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DatatableController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SlackErrorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,6 @@ Route::get('/export/csv',[StudentController::class,'exportStudentCsv']);
 
 //usercontroller route
 Route::get('/user',[UserController::class,'sendEmailUser']);
+
+//SlackErrorController
+Route::get('/error',[SlackErrorController::class,'codeErrorSlack']);
